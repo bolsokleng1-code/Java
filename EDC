@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDC Management System</title>
+    <style>
+        div{
+            width: 350px;
+            text-align: center;
+            background-color: floralwhite;
+            text-align: center;
+            margin: 80px auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1 id="EDC">EDC Management System</h1>
+        
+            <input type="text" id="iname" placeholder="Name"><br>
+            <input type="text" id="AD" placeholder="Address"><br>
+            <input type="number" id="ioldkw" placeholder="OldKW"><br>
+            <input type="number" id="inewkw" placeholder="NewKW"><br>
+                <h2 id="name"></h2>
+                <h2 id="address"></h2>
+                <h2 id="oldkw"></h2>
+                <h2 id="newkw"></h2>
+                <h2 id="numkw"></h2>
+                    <button onclick="edc()">Payment</button>
+            <script>
+                function edc(){
+                let name=document.getElementById("iname").value;
+                let address=document.getElementById("AD").value;
+                let oldkw=parseInt(document.getElementById("ioldkw").value);
+                let newkw=parseInt(document.getElementById("inewkw").value);
+                let numkw=newkw-oldkw;
+
+                if(numkw>200) payment=numkw*730;
+                else if (numkw>50) payment=numkw*610;
+                else if (numkw>15) payment=numkw*480;
+                else payment=numkw*390;
+
+                document.getElementById("name").innerHTML="Name: "+name;
+                document.getElementById("address").innerHTML="Address: "+address;
+                document.getElementById("oldkw").innerHTML="OldKW: "+oldkw;
+                document.getElementById("newkw").innerHTML="NewKW: "+newkw;
+                document.getElementById("numkw").innerHTML="Kw: "+numkw;
+                document.getElementById("numkw").innerHTML="Payment: "+payment;
+
+                }
+            </script>
+    </div>
+</body>
+</html>
