@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JAVASCRIPT</title>
+    <style>
+        div{
+            width: 250px;
+            background-color: coral;
+            text-align: center;
+            margin: 80px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+    <h1 id="BYAY">Vehicle Information</h1>
+    <input type="text" id="imodel" placeholder="Model"><br>
+    <input type="text" id="proj" placeholder="Project">
+    <input type="text" id="ivalue" placeholder="Value">
+    <input type="number" id="igrade" placeholder="Grade">
+    <h2 id="model"></h2> 
+    <h2 id="project"></h2>
+    <h2 id="value"></h2>
+    <h2 id="grade"></h2>
+    <button onclick="crame()">Crack me</button>
+    <script>
+        function crame(){
+            model=document.getElementById("imodel").value;
+            pro=document.getElementById("proj").value;
+            value=parseFloat(document.getElementById("ivalue").value);
+            grade=parseFloat(document.getElementById("igrade").value);
+            if (value>=125000) result="Bad Price"
+            else result="Good Price"
+            if(value>250000)pri="A";
+            else if(value>235000)pri="B";
+            else if(value>215000)pri="C";
+            else if(value>185000)pri="D";
+            else if(value>170000)pri="E";
+            else if (value>150000)pri="F"
+            else pri="TRASH!";
+
+            document.getElementById("model").innerHTML="Model: "+model;
+            document.getElementById("project").innerHTML="Project: "+pro;
+            document.getElementById("value").innerHTML="Result: "+result;
+            document.getElementById("grade").innerHTML="Grade: "+pri;
+        }
+    </script>
+    </div>
+</body>
+</html>
